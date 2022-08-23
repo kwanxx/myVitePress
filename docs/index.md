@@ -1,5 +1,6 @@
 ---
 layout: home
+aside: false 
 hero:
   name: Kwan的博客
   text: 记录个人学习心得
@@ -10,7 +11,7 @@ hero:
       link: /blog/
     - theme: alt
       text: View on GitHub
-      link: https://github.com/
+      link: https://github.com/kwanxx
 ---
- 
+
  
