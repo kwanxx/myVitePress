@@ -29,6 +29,7 @@ export default {
             items: [
               { text: '目录', link: '/blog/' },
               { text: 'Linux', link: '/blog/Linux/' },
+ { text: 'Spring Boot', link: '/blog/SpringBoot/' },
             ]
           } 
         ],
