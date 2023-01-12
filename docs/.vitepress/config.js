@@ -1,3 +1,8 @@
+/*
+ 下载： npm install
+ 构建： npm run build
+ 运行： npm run dev
+ */
 export default {
     title: 'Kwan \' s Blog',
 
@@ -28,8 +33,14 @@ export default {
             text: '日志记录',
             items: [
               { text: '目录', link: '/blog/' },
+              { text: '小程序', link: '/blog/smallapp/' },
+              { text: 'SpringBoot', link: '/blog/SpringBoot/' },
               { text: 'Linux', link: '/blog/Linux/' },
- { text: 'Spring Boot', link: '/blog/SpringBoot/' },
+              { text: 'Android', link: '/blog/Android/' },
+              { text: 'IDEA', link: '/blog/IDEA/' },
+              { text: 'Javascript', link: '/blog/Javascript/' },
+              { text: 'Git', link: '/blog/Git/' },
+              { text: 'others', link: '/blog/others/' },
             ]
           } 
         ],
