@@ -34,6 +34,7 @@ export default {
             items: [
               { text: '目录', link: '/blog/' },
               { text: '小程序', link: '/blog/smallapp/' },
+              { text: 'Node', link: '/blog/Node/' },
               { text: 'SpringBoot', link: '/blog/SpringBoot/' },
               { text: 'Linux', link: '/blog/Linux/' },
               { text: 'Android', link: '/blog/Android/' },
