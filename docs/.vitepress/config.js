@@ -25,7 +25,7 @@ export default {
       ],
       footer: {
         message: 'Powered By VitePress',
-        copyright: 'Copyright © 2022-Kwan'
+        copyright: 'Copyright © 2024-Kwan'
       },
       sidebar:{
         '/blog/': [
@@ -33,6 +33,7 @@ export default {
             text: '日志记录',
             items: [
               { text: '目录', link: '/blog/' },
+              { text: '英语', link: '/English/' },
               { text: '小程序', link: '/blog/smallapp/' },
               { text: 'Node', link: '/blog/Node/' },
               { text: 'SpringBoot', link: '/blog/SpringBoot/' },
