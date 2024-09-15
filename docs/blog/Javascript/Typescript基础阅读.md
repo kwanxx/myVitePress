@@ -96,7 +96,7 @@ console.log(add(2,3));
 
 ------
 
-### REST参数
+## REST参数
 
 函数要接受N个参数，可以使用**REST参数**：
 
@@ -116,4 +116,35 @@ console.log(add(2,3，4,5)); // 14
 ```
 
 注意**REST参数...b**放最后
+
+------
+
+
+
+## Class类型
+
+//ts声明类
+
+```typescript
+class Bycile{
+    public wheels:number;
+    public BikeType:String;
+
+    constructor(wheels:number = 2 , BikeType){
+        this.wheels = wheels;
+        this.BikeType = BikeType
+    }
+    getBikeType(){
+        return this.BikeType
+    }
+}
+```
+
+//实例化
+
+```typescript
+var CBycile:Bycile = new Bycile(10, "abike"); 
+
+console.log(`单车的轮子数量：${CBycile.getBikeType()},类型${CBycile.getBikeType()}`);
+```
 
