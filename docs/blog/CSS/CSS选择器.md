@@ -66,3 +66,19 @@ a：active（点击时显示）
 
 ------
 
+
+
+## :root 根类选择器
+
+:root 表示 <html> 元素，除了优先级更高之外，与 在html 选择器写样式相同。**在写全局样式时候有用。**[mdn详情](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:root)
+
+```css
+     :root{
+      font-size: 24px;
+      color:red;
+     }
+```
+
+
+
+:not 反选伪类选择器
