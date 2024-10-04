@@ -22,46 +22,41 @@ a：active（点击时显示）
 
 给a标签添加在新标签页打开属性，取消文字下划线， 添加link\visited\hover\active伪类选择器，添加文字颜色分别为红绿黄蓝
 
-**html**:
 
+
+**html**:
 ```html
-    
-    <nav>
-        <ul>
-            <li><a href="https://baidu.com">百度</a></li>
-            <li><a href="https://sogou.com">搜狗</a></li>
-            <li><a href="https://weixin.qq.com">微信</a></li>
-        </ul>
-    </nav>
+<nav>
+    <ul>
+        <li><a href="https://baidu.com">百度</a></li>
+        <li><a href="https://sogou.com">搜狗</a></li>
+        <li><a href="https://weixin.qq.com">微信</a></li>
+    </ul>
+</nav>
 ```
 
 **CSS:**
-
 ```css
-   a {
-            text-decoration: none;
+a {
+    text-decoration: none;
+}
 
-        }
+a:link {
+    color: red;
+}
 
-        a:link {
+a:visited {
+    color: blue;
+}
 
-            color: red;
+a:hover {
+    color: green;
+}
 
-        }
+a:active {
+    color: orange;
+}
 
-        a:visited {
-            color: blue;
-        }
-
-        a:hover {
-            color: green;
-
-        }
-
-        a:active {
-            color: orange;
-
-        }
 ```
 
 ------
@@ -72,7 +67,7 @@ a：active（点击时显示）
 
 :root 表示 <html> 元素，除了优先级更高之外，与 在html 选择器写样式相同。**在写全局样式时候有用。**[mdn详情](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:root)
 
-```css
+``` 
      :root{
       font-size: 24px;
       color:red;

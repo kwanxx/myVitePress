@@ -3,6 +3,7 @@
  构建： npm run build
  运行： npm run dev
  */
+ 
 export default {
     title: 'Kwan \' s Blog',
 
@@ -47,9 +48,10 @@ export default {
           } 
         ],
       }
-      
-    }
-
+    },
+    markdown: {
+     
+      attrs: false,
+      html: false,
+    },
   }
-
- 

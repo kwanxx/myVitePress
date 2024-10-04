@@ -10,7 +10,7 @@
 
 **CSS**:
 
-```CSS
+``` 
    body {
       font-size: 30px;
       color: red;
@@ -69,7 +69,7 @@
 
 CSS:
 
-```CSS
+``` 
   main{
       color:#ffffff;
     }
@@ -122,7 +122,7 @@ html：
 
 加!important，不受CSS优先级影响，强制应用样式：
 
-```css
+``` 
 p{
   color:#f00 !important;
 }
