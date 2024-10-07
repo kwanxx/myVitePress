@@ -1,31 +1,63 @@
 # CSS特性
 
+CSS具有三个特性，在了解之前，可以看这段代码：
+
+😺**div里面的文字最终会是什么颜色？**
+
+CSS：
+
+```css
+.text1{
+color:red;
+}
+#myText{
+color:green;
+}
+div{
+color:blue;
+}
+```
+
+html:
+
+```html
+<div class="text1" id="myText" >
+    你好吗？
+</div>
+```
+
+这三个CSS样式都是指向div一个标签，它最终显示的文字颜色是？**是绿色**。因为应用了CSS的**优先级**⁉。等看完整个内容，再回来这里吧。
+
+------
+
+
+
 ## 1.继承性（inherit）
 
 ### 📝简介
 
-子标签可以继承父标签的同名CSS属性，例如font文字CSS样式、color这些，但不是所有CSS属性都可以继承，像 width、margin、padding 和 border 不会被继承，[去看详情](https://web.dev/learn/css/inheritance?hl=zh-cn)。
+**子标签可以继承父标签的同名CSS属性**，例如font文字CSS样式、color这些，但不是所有CSS属性都可以继承，像 width、margin、padding 和 border 不会被继承，[去看详情](https://web.dev/learn/css/inheritance?hl=zh-cn)。
 
 试想一下，如果 **border 可以被继承**，每个列表和列表项都会获得一个边框——可能就不是我们想要的结果！我们通常可以通过常识来判断哪些属性属于默认继承。看例子：
 
 **CSS**:
 
-``` 
-   body {
-      font-size: 30px;
-      color: red;
-      font-weight: 100;
-    }
+``` css
+body {
+font-size: 30px;
+color: red;
+font-weight: 100;
+}
 ```
 
 **html:**
 
 ```html
-  <div>div 标签</div>
-  <p>p 标签</p>
-  <span>span 标签</span>
-  <a href="#">a 标签</a>
-  <h1>h1 标签</h1>
+<div>div 标签</div>
+<p>p 标签</p>
+<span>span 标签</span>
+<a href="#">a 标签</a>
+<h1>h1 标签</h1>
 ```
 
 ❗输出效果：
@@ -35,27 +67,31 @@
 
 <img src="../images/image-20240924222628410.png" alt="image-20240924222628410" style="zoom:55%;" />
 
+### 📝user agent style sheet 用户代理样式表
+
 ⁉为什么部分标签不会继承全部样式？
 
-如果标签自己有样式则生效自己的样式，不继承。
+在浏览器中，存在user agent style sheet（用户代理样式表、**即浏览器默认样式**，**注意不是标签自己的默认值**），某些标签例如a标签的color属性，就有浏览器默认样式，color是蓝色。
 
-打开DevTool，点击其中一个标签，留意右边的Styles，画删除线的样式是不能被继承。为什么？
+如果标签存在user agent style sheet对应样式，则不继承父标签样式。
+
+打开DevTool，点击其中一个标签，以H1标签为例，留意右边的Styles，画删除线的样式font-size、font-weight是不能被继承。为什么？
 
 ![image-20240924222023585](../images/image-20240924222023585.png)
 
-
-
-再点击**Computed**，以H1标签为例，font-weight应用的是user agent stylesheet的bold属性值，不是body标签的100。
+再点击**Computed**，**font-weight**应用的是**user agent stylesheet**的**bold**属性值，不是body标签的font-weight：100。font-size也是，可以对比一下。
 
 ![image-20240924222135851](../images/image-20240924222135851.png)
 
 所以，如果有user agent stylesheet或浏览器预先设定的样式，就会先被继承，如果没有就继承我们写的样式。
 
+或者使用**控制继承**，来达到继承的目的。
 
+### 📝控制继承 
 
-### 📝控制继承
+作用：**让子标签的CSS属性选择是否继承父标签的同名CSS属性值**，具体参考：
 
-作用：**让子标签的CSS属性选择是否继承父标签的同名CSS属性值**
+[链接]: https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance#理解继承
 
 属性值：
 
@@ -63,33 +99,72 @@
 
 2.**initial**：沿用CSS属性原有的默认值，部分CSS属性没有默认值。
 
-3.**unset**：设置自然值，如果CSS属性没有默认值，就继承父标签的属性（inherit）；如果没有继承父标签的属性，就沿用CSS默认值（initial）。
+3.**unset**：3.unset：设置自然值，要么继承父标签的属性（inherit）；如果没有父标签没有设置相关的属性，就沿用CSS默认值（initial）。
 
-
+先来看：
 
 CSS:
 
-``` 
-  main{
-      color:#ffffff;
-    }
-    a { 
-      padding: 10px 20px;
-      text-decoration: none;
-      background: #eabdb3;
-      text-align: center;   
-    }
+``` css
+main{
+    color: #007a43;
+    font-weight: 100;
+}
+a { 
+    /* a标签、设置背景颜色 */
+    padding: 10px 20px;
+    background: #eabdb3;
+    text-align: center; 
+    /* a标签验证inheri\initial\unset */
+
+}
 ```
 
 html：
 
+```html
+<main>
+    <a href="#">这是第一个超链接</a>
+    <article>
+        <p>我是P标签</p>
+        <a href="#">这是第二个超链接</a>
+    </article>
+</main>
 ```
 
-```
+a标签是不会继承main标签的color属性，会沿用浏览器预先设定的样式，蓝色字、下划线
+
+![image-20241005204536083](../images/image-20241005204536083.png)
+
+#### 1.**inherit** 
+
+继承父标签
+
+设置a标签，**color:inherit**，a标签color与父标签main标签color颜色一致：
+
+![image-20241006143447525](../images/image-20241006143447525.png)
+
+#### **2.initial**
+
+设置默认值
+
+**设置a标签，**color:initial，a标签color设置为默认值，没有颜色，a标签默认值没有颜色。
+
+![image-20241006143529287](../images/image-20241006143529287.png)
+
+#### 3.unset
+
+自然值，要么inherit，继承父元素的，要么initial，用属性默认值的。
+
+这里color:unset，显然是inherit。
+
+![image-20241006143712054](../images/image-20241006143712054.png)
+
+------
 
 
 
-
+## 2.优先级
 
 
 
@@ -104,7 +179,7 @@ html：
 | 通配符、子选择器、相邻选择器等 | *、> 、+、~                 | 0000       |      |
 | 继承的样式                     |                             | 0000       |      |
 
-## 优先级
+## 
 
 
 
