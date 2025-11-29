@@ -19,6 +19,10 @@ export default {
     
       lastUpdatedText: '更新时间',
 
+       search: {
+      provider: 'local'
+    },
+
       nav: [
         { text: '主页', link: '/' },
         { text: '日志', link: '/blog/' },
@@ -26,7 +30,7 @@ export default {
       ],
       footer: {
         message: 'Powered By VitePress',
-        copyright: 'Copyright © 2024-Kwan'
+        copyright: 'Copyright © 2025-Kwan'
       },
       sidebar:{
         '/blog/': [
