@@ -5,6 +5,10 @@
  */
  
 export default {
+    base: '/myVitePress/', // 仓库名
+  build: {
+    outDir: 'docs/.vitepress/dist'   //构建产物输出目录
+  },
     title: 'Kwan \' s Blog',
 
     description: '日志记录',
