@@ -5,7 +5,7 @@
  */
  
 export default {
-    base: '/myVitePress/', // 仓库名
+    base: '/', // 仓库名
   build: {
     outDir: 'docs/.vitepress/dist'   //构建产物输出目录
   },
