@@ -3,60 +3,11 @@
  构建： npm run build
  运行： npm run dev
  */
-// 支持latex公式
-
-
-/*import mathjax3 from 'markdown-it-mathjax3';
-
-const customElements = [
-  'mjx-container',
-  'mjx-assistive-mml',
-  'math',
-  'maction',
-  'maligngroup',
-  'malignmark',
-  'menclose',
-  'merror',
-  'mfenced',
-  'mfrac',
-  'mi',
-  'mlongdiv',
-  'mmultiscripts',
-  'mn',
-  'mo',
-  'mover',
-  'mpadded',
-  'mphantom',
-  'mroot',
-  'mrow',
-  'ms',
-  'mscarries',
-  'mscarry',
-  'msgroup',
-  'msline',
-  'msrow',
-  'mspace',
-  'msqrt',
-  'mstack',
-  'mstyle',
-  'msub',
-  'msup',
-  'msubsup',
-  'mtable',
-  'mtd',
-  'mtext',
-  'mtr',
-  'munder',
-  'munderover',
-  'semantics',
-  'annotation',
-  'annotation-xml',
-];*/
-
 
 export default {
   base: '/', // 仓库名
   build: {
+    chunkSizeWarningLimit: 1500, // 调整包的大小
     outDir: 'docs/.vitepress/dist',   //构建产物输出目录
  
   },
@@ -110,20 +61,9 @@ export default {
     }
   },
   markdown: {
-    // config: (md) => {
-    //   md.use(markdownItKatex);
-    // },
     math:true,
     attrs: false,
     html: false,
   },
-  // vue: {
-  //   template: {
-  //     compilerOptions: {
-  //       // 让 Vue 识别 MathJax 生成的自定义标签
-  //       isCustomElement: (tag) => customElements.includes(tag),
-  //     },
-  //   },
-  // },
 
 }
