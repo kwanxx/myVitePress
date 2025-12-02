@@ -3,63 +3,127 @@
  构建： npm run build
  运行： npm run dev
  */
- 
+// 支持latex公式
+
+
+/*import mathjax3 from 'markdown-it-mathjax3';
+
+const customElements = [
+  'mjx-container',
+  'mjx-assistive-mml',
+  'math',
+  'maction',
+  'maligngroup',
+  'malignmark',
+  'menclose',
+  'merror',
+  'mfenced',
+  'mfrac',
+  'mi',
+  'mlongdiv',
+  'mmultiscripts',
+  'mn',
+  'mo',
+  'mover',
+  'mpadded',
+  'mphantom',
+  'mroot',
+  'mrow',
+  'ms',
+  'mscarries',
+  'mscarry',
+  'msgroup',
+  'msline',
+  'msrow',
+  'mspace',
+  'msqrt',
+  'mstack',
+  'mstyle',
+  'msub',
+  'msup',
+  'msubsup',
+  'mtable',
+  'mtd',
+  'mtext',
+  'mtr',
+  'munder',
+  'munderover',
+  'semantics',
+  'annotation',
+  'annotation-xml',
+];*/
+
+
 export default {
-    base: '/', // 仓库名
+  base: '/', // 仓库名
   build: {
-    outDir: 'docs/.vitepress/dist'   //构建产物输出目录
+    outDir: 'docs/.vitepress/dist',   //构建产物输出目录
+ 
   },
-    title: 'Kwan \' s Blog',
+  title: 'Kwan \' s Blog',
 
-    description: '日志记录',
-    
-    lang:'zh-CN',
+  description: '日志记录',
 
-    lastUpdated: true,
+  lang: 'zh-CN',
 
-    themeConfig: {
-    
-      siteTitle: 'Kwan \' s Blog',
-    
-      lastUpdatedText: '更新时间',
+  lastUpdated: true,
 
-       search: {
+  themeConfig: {
+
+    siteTitle: 'Kwan \' s Blog',
+
+    lastUpdatedText: '更新时间',
+
+    search: {
       provider: 'local'
     },
 
-      nav: [
-        { text: '主页', link: '/' },
-        { text: '日志', link: '/blog/' },
-        { text: '归档', link: '/archive/' },
+    nav: [
+      { text: '主页', link: '/' },
+      { text: '日志', link: '/blog/' },
+      { text: '归档', link: '/archive/' },
+    ],
+    footer: {
+      message: 'Powered By VitePress',
+      copyright: 'Copyright © 2025-Kwan'
+    },
+    sidebar: {
+      '/blog/': [
+        {
+          text: '日志记录',
+          items: [
+            { text: '目录', link: '/blog/' },
+            { text: '英语', link: '/blog/English/' },
+            { text: '数学', link: '/blog/Math/' },
+            { text: '小程序', link: '/blog/smallapp/' },
+            { text: 'Node', link: '/blog/Node/' },
+            { text: 'SpringBoot', link: '/blog/SpringBoot/' },
+            { text: 'Linux', link: '/blog/Linux/' },
+            { text: 'Android', link: '/blog/Android/' },
+            { text: 'IDEA', link: '/blog/IDEA/' },
+            { text: 'Javascript', link: '/blog/Javascript/' },
+            { text: 'Git', link: '/blog/Git/' },
+            { text: 'others', link: '/blog/others/' },
+          ]
+        }
       ],
-      footer: {
-        message: 'Powered By VitePress',
-        copyright: 'Copyright © 2025-Kwan'
-      },
-      sidebar:{
-        '/blog/': [
-          {
-            text: '日志记录',
-            items: [
-              { text: '目录', link: '/blog/' },
-              { text: '英语', link: '/blog/English/' },
-              { text: '小程序', link: '/blog/smallapp/' },
-              { text: 'Node', link: '/blog/Node/' },
-              { text: 'SpringBoot', link: '/blog/SpringBoot/' },
-              { text: 'Linux', link: '/blog/Linux/' },
-              { text: 'Android', link: '/blog/Android/' },
-              { text: 'IDEA', link: '/blog/IDEA/' },
-              { text: 'Javascript', link: '/blog/Javascript/' },
-              { text: 'Git', link: '/blog/Git/' },
-              { text: 'others', link: '/blog/others/' },
-            ]
-          } 
-        ],
-      }
-    },
-    markdown: {
-     
-      attrs: false,
-      html: false,
-    },
-  }
+    }
+  },
+  markdown: {
+    // config: (md) => {
+    //   md.use(markdownItKatex);
+    // },
+    math:true,
+    attrs: false,
+    html: false,
+  },
+  // vue: {
+  //   template: {
+  //     compilerOptions: {
+  //       // 让 Vue 识别 MathJax 生成的自定义标签
+  //       isCustomElement: (tag) => customElements.includes(tag),
+  //     },
+  //   },
+  // },
+
+}

@@ -3,7 +3,7 @@ layout: home
 aside: false 
 hero:
   name: Kwan的博客
-  text: 记录个人学习心得
+  text: 记录学习
   tagline: 匆忙上线中...
   actions:
     - theme: brand
