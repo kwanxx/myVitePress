@@ -60,7 +60,7 @@ $$
 \end{aligned}
 \right.
 $$
-![image-20251203134416135](C:\Users\guanshl\WPSDrive\1775054599\WPS企业云盘\广州市信息技术职业学校\我的企业文档\笔记\images\image-20251203134416135.png)
+![image-20251203134416135](./images/image-20251203134416135.png)
 
 
 
@@ -75,7 +75,7 @@ $$
 \end{aligned}
 \right.
 $$
-![image-20251203134933368](C:\Users\guanshl\WPSDrive\1775054599\WPS企业云盘\广州市信息技术职业学校\我的企业文档\笔记\images\image-20251203134933368.png)
+![image-20251203134933368](./images/image-20251203134933368.png)
 
 （3）线性方程组无解，线段平行
 $$
@@ -88,7 +88,7 @@ x+y=3\\
 $$
 
 
-![image-20251203135120486](C:\Users\guanshl\WPSDrive\1775054599\WPS企业云盘\广州市信息技术职业学校\我的企业文档\笔记\images\image-20251203135120486.png)
+![image-20251203135120486](./images/image-20251203135120486.png)
 
 
 
