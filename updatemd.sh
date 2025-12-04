@@ -1,3 +1,3 @@
 git add .
-git commit -m ""
-git pull
+git commit -m "$(date +'%Y-%m-%d %H:%M:%S')"
+git push
